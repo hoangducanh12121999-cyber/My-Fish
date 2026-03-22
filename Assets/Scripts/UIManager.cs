@@ -8,12 +8,16 @@ public class UIManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Invoke("StartDelay", 0.1f);
     }
 
-    // Update is called once per frame
-    void Update()
+    void StartDelay()
     {
-        scoreText.text= GameManager.Instance.GetScore().ToString();
+        GameEvent.eventScoreComplete.AddListener(UpdateScoreText);
+    }
+
+    void UpdateScoreText(int score)
+    {
+        scoreText.text = score.ToString();  
     }
 }

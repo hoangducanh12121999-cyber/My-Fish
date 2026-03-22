@@ -9,9 +9,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player entered score trigger");
-            GameManager.Instance.AddScore(pointValue);
-            // AudioSource.PlayClipAtPoint(scoreSound, transform.position);
+            GameEvent.eventScore.Invoke(pointValue);
         }
 
     }

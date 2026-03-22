@@ -6,12 +6,26 @@ public class GameManager : Singleton<GameManager>
 
     void Start()
     {
-        score = 0;
+        if (GameEvent.eventUpdateUI == null)
+        {
+            GameEvent.eventUpdateUI = new UnityEngine.Events.UnityEvent();
+        }
+        if (GameEvent.eventScore == null)
+        {
+            GameEvent.eventScore = new UnityEngine.Events.UnityEvent<int>();
+        }
+        if (GameEvent.eventScoreComplete == null)
+        {
+            GameEvent.eventScoreComplete = new UnityEngine.Events.UnityEvent<int>();
+        }
+
+        GameEvent.eventScore.AddListener(AddPoint);
     }
 
-    public void AddScore(int point)
+    public void AddPoint(int point)
     {
         score += point;
+        GameEvent.eventScoreComplete.Invoke(score);
     }
 
     public int GetScore()
