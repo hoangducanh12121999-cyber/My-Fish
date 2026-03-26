@@ -198,6 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20546840a03d4a40a2067611ef4584d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
+  scoreClip: {fileID: 8300000, guid: a3d0640b93897a74d95d46370bdaebea, type: 3}
   pointValue: 1
 --- !u!61 &326707645148743900
 BoxCollider2D:

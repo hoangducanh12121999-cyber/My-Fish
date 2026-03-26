@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     bool isInRange = false;
     [SerializeField] float angleUp = 20f;
 
+    public AudioClip scoreClip;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -72,6 +74,7 @@ public class PlayerController : MonoBehaviour
         isDead = true;
         anim.SetTrigger("isDead");
         Time.timeScale = 0;
+        AudioManager.Instance.GameOver(scoreClip);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
