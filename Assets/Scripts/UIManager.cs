@@ -46,8 +46,8 @@ public class UIManager : MonoBehaviour
     void StartDelay()
     {
         GameEvent.eventScoreComplete.AddListener(UpdateScoreText);
+
         GameEvent.eventHighScore.AddListener(UpdateHighScoreText);
-        UpdateHighScoreText(GameManager.Instance.GetHighScore());
     }
 
     void UpdateScoreText(int score)
