@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
+        
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
     }
@@ -74,6 +76,16 @@ public class PlayerController : MonoBehaviour
         anim.SetTrigger("isDead");
         Time.timeScale = 0;
         AudioManager.Instance.GameOverMusic();
+        StartCoroutine(CallGameOver());
+    }
+
+    IEnumerator CallGameOver()
+    {
+        while (true)
+        {
+            yield return new WaitForSecondsRealtime(2f);
+            UIManager.Instance.GameOverUI();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)

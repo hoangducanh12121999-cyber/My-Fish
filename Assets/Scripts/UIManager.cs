@@ -6,17 +6,37 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI highScoreText;
     public GameObject optionPanel;
     public GameObject cF2;
     public Button optionBtn;
     public Button resumeBtn;
+    public GameObject gameOverPanel;
 
+
+    public static UIManager Instance;
+    void Awake()
+    {
+        /*if (Instance == null)
+         {
+             Instance = this;
+             DontDestroyOnLoad(gameObject);
+         }
+         else
+         {
+             Destroy(gameObject);
+         }*/
+        Time.timeScale = 1;
+        AudioManager.Instance.HUDMusic();
+        Instance = this;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         cF2.SetActive(true);
         optionPanel.SetActive(false);
+        gameOverPanel.SetActive(false);
         OnButtonClick();
 
 
@@ -26,11 +46,18 @@ public class UIManager : MonoBehaviour
     void StartDelay()
     {
         GameEvent.eventScoreComplete.AddListener(UpdateScoreText);
+        GameEvent.eventHighScore.AddListener(UpdateHighScoreText);
+        UpdateHighScoreText(GameManager.Instance.GetHighScore());
     }
 
     void UpdateScoreText(int score)
     {
         scoreText.text = score.ToString();  
+    }
+
+    void UpdateHighScoreText(int highScore)
+    {
+        highScoreText.text = highScore.ToString();
     }
 
     public void OnButtonClick()
@@ -62,5 +89,10 @@ public class UIManager : MonoBehaviour
             Debug.Log("Resume");
         }
     }
-   
+
+    public void GameOverUI()
+    {
+        gameOverPanel.SetActive(true);
+        cF2.SetActive(false);
+    }
 }

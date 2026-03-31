@@ -19,6 +19,7 @@ public class AudioManager : Singleton<AudioManager>
     {
         OnVolumeMusic(DataManager.DataMusicVolume);
         OnVolumeSfx(DataManager.DataSFXVolume);
+        
     }
 
 
@@ -32,6 +33,7 @@ public class AudioManager : Singleton<AudioManager>
     public void MenuMusic()
     {
         PlayMusic(menuMusic);
+        Debug.Log("Menu music played");
     }
 
     public void HUDMusic()
