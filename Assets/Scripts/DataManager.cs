@@ -4,8 +4,7 @@ using UnityEngine;
 public class DataManager : MonoBehaviour
 {
     const int defaultScore = 0;
-    const float defaultMusicVolume = 1f;
-    const float defaultSFXVolume = 1f;
+    const float defaultVolume = 1f;
 
     public static int DataScore
     {
@@ -14,13 +13,13 @@ public class DataManager : MonoBehaviour
     }
     public static float DataMusicVolume
     {
-        get { return PlayerPrefs.GetFloat(DataKey.MusicVolumeKey, defaultMusicVolume); }
+        get { return PlayerPrefs.GetFloat(DataKey.MusicVolumeKey, defaultVolume); }
         set { PlayerPrefs.SetFloat(DataKey.MusicVolumeKey, value); }
     }
 
     public static float DataSFXVolume
     { 
-        get { return PlayerPrefs.GetFloat(DataKey.SFXVolumeKey, defaultSFXVolume); }
+        get { return PlayerPrefs.GetFloat(DataKey.SFXVolumeKey, defaultVolume); }
         set { PlayerPrefs.SetFloat(DataKey.SFXVolumeKey, value); }
     }
 

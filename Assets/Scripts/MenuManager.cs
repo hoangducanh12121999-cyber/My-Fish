@@ -1,22 +1,26 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    public AudioSource backGroundMenuAudio;
-    public AudioClip backGroundMenuMusic;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
-        backGroundMenuAudio = GetComponent<AudioSource>();
-        PlayMenuMusic(backGroundMenuMusic);
+        if (SceneManager.GetActiveScene().name == "Menu")
+        {
+            Time.timeScale = 1;
+            AudioManager.Instance.MenuMusic();
+        }
+        
     }
-
-    private void PlayMenuMusic(AudioClip clip)
+   
+    public void OnButtonClick(string sceneName)
     {
-        backGroundMenuAudio.clip = clip;
-        backGroundMenuAudio.loop = true;
-        backGroundMenuAudio.Play();
-
+        SceneManager.LoadScene(sceneName);
+        AudioManager.Instance.OnButtonClickMusic();
+    }
+    public void OnExit()
+    {
+        Application.Quit();
     }
 }

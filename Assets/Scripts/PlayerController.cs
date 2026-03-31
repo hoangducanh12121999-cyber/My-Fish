@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
     bool isInRange = false;
     [SerializeField] float angleUp = 20f;
 
-    public AudioClip scoreClip;
 
     void Awake()
     {
@@ -20,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (ControlFreak2.CF2Input.GetKeyDown(KeyCode.Space))
         {
             isSwimUp = true;
         }
@@ -30,7 +29,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Dir();
-        if (isInRange && Input.GetKeyDown(KeyCode.Space))
+        if (isInRange && ControlFreak2.CF2Input.GetKeyDown(KeyCode.Space))
         {
             isInRange = false;
         }
@@ -45,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
     private bool Dir() 
     { 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (ControlFreak2.CF2Input.GetKeyDown(KeyCode.Space))
         {
             isSwimUp = !isSwimUp;
         }
@@ -74,7 +73,7 @@ public class PlayerController : MonoBehaviour
         isDead = true;
         anim.SetTrigger("isDead");
         Time.timeScale = 0;
-        AudioManager.Instance.GameOver(scoreClip);
+        AudioManager.Instance.GameOverMusic();
     }
 
     void OnTriggerEnter2D(Collider2D collision)

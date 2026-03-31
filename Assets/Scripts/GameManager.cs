@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -6,6 +7,11 @@ public class GameManager : Singleton<GameManager>
 
     void Start()
     {
+        if (SceneManager.GetActiveScene().name == "HUD")
+        {
+            AudioManager.Instance.HUDMusic();
+        }
+
         if (GameEvent.eventUpdateUI == null)
         {
             GameEvent.eventUpdateUI = new UnityEngine.Events.UnityEvent();
@@ -25,7 +31,7 @@ public class GameManager : Singleton<GameManager>
     public void AddPoint(int point)
     {
         score += point;
-        GameEvent.eventScoreComplete.Invoke(score);
+        GameEvent.eventScoreComplete?.Invoke(score);
     }
 
     public int GetScore()
