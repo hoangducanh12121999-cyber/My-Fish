@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 [AddComponentMenu("Duc Anh/Audio Manager")]
 public class AudioManager : Singleton<AudioManager>
 {
@@ -33,7 +32,6 @@ public class AudioManager : Singleton<AudioManager>
     public void MenuMusic()
     {
         PlayMusic(menuMusic);
-        Debug.Log("Menu music played");
     }
 
     public void HUDMusic()

@@ -10,6 +10,7 @@ public class OptionUI : MonoBehaviour
     {
         sliderMusic.value = DataManager.DataMusicVolume;
         sliderSfx.value = DataManager.DataSFXVolume;
+
     }
 
     public void UpdateAudio(float volume)
