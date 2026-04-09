@@ -2830,43 +2830,43 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1321921314951079324, guid: 30d02ec0bba5e6b4bbe0721101421abf, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1321921314951079324, guid: 30d02ec0bba5e6b4bbe0721101421abf, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1321921314951079324, guid: 30d02ec0bba5e6b4bbe0721101421abf, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4403713193506583839, guid: 30d02ec0bba5e6b4bbe0721101421abf, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4403713193506583839, guid: 30d02ec0bba5e6b4bbe0721101421abf, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4650453782022707029, guid: 30d02ec0bba5e6b4bbe0721101421abf, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4650453782022707029, guid: 30d02ec0bba5e6b4bbe0721101421abf, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6306816825601862960, guid: 30d02ec0bba5e6b4bbe0721101421abf, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6306816825601862960, guid: 30d02ec0bba5e6b4bbe0721101421abf, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6306816825601862960, guid: 30d02ec0bba5e6b4bbe0721101421abf, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8516788020393140296, guid: 30d02ec0bba5e6b4bbe0721101421abf, type: 3}
       propertyPath: m_Name
@@ -5518,7 +5518,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1660186448
 RectTransform:
   m_ObjectHideFlags: 0
