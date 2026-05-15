@@ -24,6 +24,7 @@ public class AudioManager : Singleton<AudioManager>
 
     public void PlayMusic(AudioClip clip)
     {
+        if (backGroundAudio.clip == clip) return;
         backGroundAudio.clip = clip;
         backGroundAudio.loop = true;
         backGroundAudio.Play();
