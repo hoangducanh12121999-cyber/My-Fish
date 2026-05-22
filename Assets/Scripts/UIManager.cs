@@ -94,4 +94,10 @@ public class UIManager : MonoBehaviour
         gameOverPanel.SetActive(true);
         cF2.SetActive(false);
     }
+
+    public void RestartGame()
+    {
+        AudioManager.Instance.OnButtonClickMusic();
+        AudioManager.Instance.HUDMusic();
+    }
 }
